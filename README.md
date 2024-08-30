@@ -11,22 +11,35 @@
 ## Main Feature 
 <b>
   
-- [x] Premium Plan Feature Added
-- [x] Refer To Get Premium Added
-- [x] Url Shortner On / Off Feature Added
-- [x] Pm Search On / Off Added (Spell Check Not Work)
-- [x] Stream Feature Added With Many Player Support 
-- [x] Language & Season & Quality & Episode Choose Option
+- [x] Clone Feature & On / Off
+- [x] Premium Plan Feature 
+- [x] Refer To Get Premium
+- [x] Ai Spell Check 
+- [x] Custom Force Subscribe
+- [x] Rename Feature & On / Off
+- [x] Premium And Refer On / Off 
+- [x] Stream Feature On / Off 
+- [x] Url Shortner On / Off Feature 
+- [x] Pm Search On / Off
+- [x] Request To Join Force Subscribe With Auto File Send 
+- [x] Custom Stream
+- [x] Stream Feature With Many Player Support 
+- [x] Language & Season & Quality & Episode & Year Choose Option
+- [x] Auto Approve & On / Off
 - [x] Custom Url Shortner Support
-- [x] Token Verification Added
-- [x] Send All Button Added
+- [x] Token Verification 
+- [x] Send All Button 
 - [x] Custom Tutorial Button
-- [x] Bot Pm File Auto Delete Added
+- [x] Bot Pm File Auto Delete 
 
 Join My <a href='https://telegram.dog/vj_botz'>Update Channel</a> For More Update Regarding Repo.</b>
 
+### How To Deploy : [Video Tutorial](https://youtu.be/J5tiWdc_AWM)
+
 ## Commands
 ```
+• /clone - 𝐶𝑟𝑒𝑎𝑡𝑒 𝑦𝑜𝑢𝑟 𝑜𝑤𝑛 𝑐𝑙𝑜𝑛𝑒 𝑎𝑢𝑡𝑜 𝑓𝑖𝑙𝑡𝑒𝑟 𝑏𝑜𝑡
+• /index - 𝑖𝑛𝑑𝑒𝑥 𝑓𝑖𝑙𝑒 𝑓𝑟𝑜𝑚 𝑦𝑜𝑢𝑟 𝑐ℎ𝑎𝑛𝑛𝑒𝑙
 • /logs - 𝑡𝑜 𝑔𝑒𝑡 𝑡ℎ𝑒 𝑟𝑒𝑐𝑒𝑛𝑡 𝑒𝑟𝑟𝑜𝑟𝑠
 • /stats - 𝑡𝑜 𝑔𝑒𝑡 𝑠𝑡𝑎𝑡𝑢𝑠 𝑜𝑓 𝑓𝑖𝑙𝑒𝑠 𝑖𝑛 𝑑𝑏.
 • /connections - 𝑇𝑜 𝑠𝑒𝑒 𝑎𝑙𝑙 𝑐𝑜𝑛𝑛𝑒𝑐𝑡𝑒𝑑 𝑔𝑟𝑜𝑢𝑝𝑠
@@ -68,6 +81,28 @@ Join My <a href='https://telegram.dog/vj_botz'>Update Channel</a> For More Updat
 • /remove_premium - 𝑅𝑒𝑚𝑜𝑣𝑒 𝑢𝑠𝑒𝑟 𝑓𝑟𝑜𝑚 𝑝𝑟𝑒𝑚𝑖𝑢𝑚 𝑙𝑖𝑠𝑡
 • /plan - 𝐶ℎ𝑒𝑐𝑘 𝑝𝑙𝑎𝑛 𝑑𝑒𝑡𝑎𝑖𝑙𝑠
 • /myplan - 𝐶ℎ𝑒𝑐𝑘 𝑦𝑜𝑢𝑟 𝑝𝑙𝑎𝑛 𝑠𝑡𝑎𝑡𝑠
+• /shortlink - 𝑠𝑒𝑡 𝑦𝑜𝑢𝑟 𝑢𝑟𝑙 𝑠ℎ𝑜𝑟𝑡𝑛𝑒𝑟 𝑖𝑛 𝑦𝑜𝑢𝑟 𝑔𝑟𝑜𝑢𝑝
+• /setshortlinkoff  - 𝑜𝑓𝑓 𝑠ℎ𝑜𝑟𝑡𝑙𝑖𝑛𝑘 𝑖𝑛 𝑦𝑜𝑢𝑟 𝑔𝑟𝑜𝑢𝑝
+• /setshortlinkon - 𝑜𝑛 𝑠ℎ𝑜𝑟𝑡𝑙𝑖𝑛𝑘 𝑖𝑛 𝑦𝑜𝑢𝑟 𝑔𝑟𝑜𝑢𝑝
+• /shortlink_info - 𝑐ℎ𝑒𝑐𝑘 𝑦𝑜𝑢𝑟 𝑔𝑟𝑜𝑢𝑝 𝑎𝑙𝑙 𝑠ℎ𝑜𝑟𝑡𝑙𝑖𝑛𝑘 𝑎𝑛𝑑 𝑡𝑢𝑡𝑜𝑟𝑖𝑎𝑙 𝑙𝑖𝑛𝑘 𝑑𝑒𝑡𝑎𝑖𝑙𝑠
+• /set_tutorial - 𝑠𝑒𝑡 𝑦𝑜𝑢𝑟 𝑢𝑟𝑙 𝑠ℎ𝑜𝑟𝑡𝑛𝑒𝑟 ℎ𝑜𝑤 𝑡𝑜 𝑜𝑝𝑒𝑛 𝑙𝑖𝑛𝑘 𝑢𝑟𝑙
+• /remove_tutorial - 𝑟𝑒𝑚𝑜𝑣𝑒 𝑦𝑜𝑢𝑟 𝑡𝑢𝑡𝑜𝑟𝑖𝑎𝑙 𝑢𝑟𝑙
+• /restart  - 𝑟𝑒𝑠𝑡𝑎𝑟𝑡 𝑡ℎ𝑒 𝑏𝑜𝑡 𝑠𝑒𝑟𝑣𝑒𝑟
+• /fsub - 𝑎𝑑𝑑 𝑓𝑜𝑟𝑐𝑒 𝑠𝑢𝑏𝑠𝑐𝑟𝑖𝑏𝑒 𝑐ℎ𝑎𝑛𝑛𝑒𝑙 𝑖𝑛 𝑔𝑟𝑜𝑢𝑝
+• /nofsub - 𝑟𝑒𝑚𝑜𝑣𝑒 𝑜𝑟 𝑜𝑓𝑓 𝑓𝑜𝑟𝑐𝑒 𝑠𝑢𝑏𝑠𝑐𝑟𝑖𝑏𝑒 𝑖𝑛 𝑦𝑜𝑢𝑟 𝑔𝑟𝑜𝑢𝑝
+• /rename - 𝑟𝑒𝑛𝑎𝑚𝑒 𝑦𝑜𝑢𝑟 𝑓𝑖𝑙𝑒
+• /set_caption - 𝑎𝑑𝑑 𝑐𝑎𝑝𝑡𝑖𝑜𝑛 𝑓𝑜𝑟 𝑦𝑜𝑢𝑟 𝑟𝑒𝑛𝑎𝑚𝑒𝑑 𝑓𝑖𝑙𝑒
+• /see_caption - 𝑠𝑒𝑒 𝑦𝑜𝑢𝑟 𝑠𝑎𝑣𝑒𝑑 𝑐𝑎𝑝𝑡𝑖𝑜𝑛
+• /del_caption - 𝑑𝑒𝑙𝑒𝑡𝑒 𝑦𝑜𝑢𝑟 𝑠𝑎𝑣𝑒𝑑 𝑐𝑎𝑝𝑡𝑖𝑜𝑛
+• /set_thumb - 𝑎𝑑𝑑 𝑡ℎ𝑢𝑚𝑏𝑛𝑎𝑖𝑙 𝑓𝑜𝑟 𝑦𝑜𝑢𝑟 𝑟𝑒𝑛𝑎𝑚𝑒𝑑 𝑓𝑖𝑙𝑒
+• /view_thumb - 𝑣𝑖𝑒𝑤 𝑦𝑜𝑢𝑟 𝑠𝑎𝑣𝑒𝑑 𝑡ℎ𝑢𝑚𝑏𝑛𝑎𝑖𝑙
+• /del_thumb - 𝑑𝑒𝑙𝑒𝑡𝑒 𝑦𝑜𝑢𝑟 𝑠𝑎𝑣𝑒𝑑 𝑡ℎ𝑢𝑚𝑏𝑛𝑎𝑖𝑙
+• /stream - 𝑔𝑒𝑛𝑒𝑟𝑎𝑡𝑒 𝑠𝑡𝑟𝑒𝑎𝑚 𝑎𝑛𝑑 𝑑𝑜𝑤𝑛𝑙𝑜𝑎𝑑 𝑙𝑖𝑛𝑘 𝑜𝑓 𝑦𝑜𝑢𝑟 𝑓𝑖𝑙𝑒
+• /telegraph - 𝑔𝑒𝑡 𝑡𝑒𝑙𝑒𝑔𝑟𝑎𝑝ℎ 𝑙𝑖𝑛𝑘 𝑜𝑓 𝑎𝑛𝑦 𝑓𝑖𝑙𝑒 𝑢𝑛𝑑𝑒𝑟 5𝑚𝑏
+• /stickerid - 𝑡𝑜 𝑔𝑒𝑡 𝑖𝑑 𝑎𝑛𝑑 𝑢𝑛𝑖𝑞𝑢𝑒 𝐼'𝑑 𝑜𝑓 𝑠𝑡𝑖𝑐𝑘𝑒𝑟
+• /font - 𝑡𝑜 𝑔𝑒𝑡 𝑎𝑛𝑦 𝑡𝑦𝑝𝑒 𝑜𝑓 𝑓𝑜𝑛𝑡 𝑜𝑓 𝑎𝑛𝑦 𝑤𝑜𝑟𝑑
+• /purgerequests - 𝑑𝑒𝑙𝑒𝑡𝑒 𝑎𝑙𝑙 𝑗𝑜𝑖𝑛 𝑟𝑒𝑞𝑢𝑒𝑠𝑡𝑠 𝑓𝑟𝑜𝑚 𝑑𝑎𝑡𝑎𝑏𝑎𝑠𝑒
+• /totalrequests - 𝑔𝑒𝑡 𝑡𝑜𝑡𝑎𝑙 𝑛𝑢𝑚𝑏𝑒𝑟 𝑜𝑓 𝑗𝑜𝑖𝑛 𝑟𝑒𝑞𝑢𝑒𝑠𝑡 𝑓𝑟𝑜𝑚 𝑑𝑎𝑡𝑎𝑏𝑎𝑠𝑒
 ```
 
 ## Variables
@@ -80,8 +115,8 @@ Join My <a href='https://telegram.dog/vj_botz'>Update Channel</a> For More Updat
 * `ADMINS`: Username or ID of Admin. Separate multiple Admins by space
 * `DATABASE_URI`: [mongoDB](https://www.mongodb.com) URI. Get this value from [mongoDB](https://www.mongodb.com). For more help watch this [video](https://youtu.be/I36_OTWvT2w)
 * `DATABASE_NAME`: Name of the database in [mongoDB](https://www.mongodb.com).
-* `LOG_CHANNEL` : A channel to log the activities of bot. Make sure bot is an admin in the channel.
-* `FDQN`: Add Your Deploy Server App url Must Add this Stream Working Properly.</b>
+* `LOG_CHANNEL` : A channel to log the activities of bot. Make sure bot is an admin in the channel.</b>
+
 ### Optional Variables
 * <b>`PICS`: Telegraph links of images to show in start message.( Multiple images can be used separated by space )
 * `FILE_STORE_CHANNEL`: Channel from were file store links of posts should be made.Separate multiple IDs by space
@@ -103,7 +138,7 @@ Join My <a href='https://telegram.dog/vj_botz'>Update Channel</a> For More Updat
 <br>
 <br>
 
-[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/VJBots/VJ-Filter-BotAuto-branch=Tech_VJ&name=VJ-Filter-bot)
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/VJBots/VJ-Filter-Bot&branch=Tech_VJ&name=VJ-Filter-Bot)
 </details>
 
 <details><summary><b>Deploy To Render</b></summary>
@@ -135,35 +170,38 @@ Use these settings when adding a monitor:</b>
 </a>
 </details>
 
-<details><summary><b>Deploy To VPS</b></summary>
-<p>
-<pre>
-git clone https://github.com/VJBots/VJ-Filter-Bot
-# Install Packages
-pip3 install -U -r requirements.txt
+<details><summary><b>Deploy To VPS</summary>
+
+
+`git clone https://github.com/VJBots/VJ-Filter-Bot`
+
+Install Packages
+
+`pip3 install -U -r requirements.txt`
+
 Edit info.py with variables as given below then run bot
-python3 bot.py
-</pre>
-</p>
+
+`python3 bot.py`
+
+</b>
 </details>
 
 <hr>
 
 
 ## Thanks to 
- - <b>Thanks To Dan For His Awesome [Library](https://github.com/pyrogram/pyrogram)
- - Thanks To Mayuri-Chan For His Awesome [Library](https://github.com/Mayuri-Chan/pyrofork)
- - Thanks To [Tech VJ](https://youtube.com/@Tech_VJ)
- - Thanks To [Eva Marie](https://t.me/TeamEvamaria)
+ - <b>Thanks To [Pyrogram Library](https://github.com/pyrogram/pyrogram) & [Pyrofork Library](https://github.com/Mayuri-Chan/pyrofork)
+ - Thanks To [Tech VJ](https://youtube.com/@Tech_VJ) To Modify And Add Amazing Feature In The Repo
+ - Thanks To [Eva Marie](https://t.me/TeamEvamaria) For Base Repo
  - Thanks To All Everyone In This Journey</b>
 
 ## Note 🏷️
  
-* [![Contact Developer](https://img.shields.io/static/v1?label=Contact+Developer&message=On+Telegram&color=critical)](https://telegram.me/VJ_Bots)
+* [![Contact Developer](https://img.shields.io/static/v1?label=Contact+Developer&message=On+Telegram&color=critical)](https://telegram.me/KingVJ01)
 
 <b>[Note To A So Called Dev](https://telegram.dog/vj_botz): 
 
-Fork the repo and edit as per your needs.</b>
+Fork The Repo And Edit As Per Your Needs.</b>
 
 ## Disclaimer
 [![GNU Affero General Public License 2.0](https://www.gnu.org/graphics/agplv3-155x51.png)](https://www.gnu.org/licenses/agpl-3.0.en.html#header)    

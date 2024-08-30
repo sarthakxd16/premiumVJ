@@ -16,13 +16,13 @@ logging.getLogger("aiohttp").setLevel(logging.ERROR)
 logging.getLogger("aiohttp.web").setLevel(logging.ERROR)
 
 from pyrogram import Client
+from pyromod import listen
 from database.ia_filterdb import Media
 from info import *
 from utils import temp
 from typing import Union, Optional, AsyncGenerator
 from pyrogram import types
 from aiohttp import web
-
 from pyrogram import Client
 from info import *
 
@@ -39,6 +39,10 @@ class TechVJXBot(Client):
             plugins={"root": "plugins"},
             sleep_threshold=5,
         )
+
+    async def set_self(self):
+        temp.BOT = self
+    
     async def iter_messages(
         self,
         chat_id: Union[int, str],

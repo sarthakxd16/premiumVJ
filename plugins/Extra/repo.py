@@ -10,7 +10,7 @@ from pyrogram import Client, filters
 
 
 @Client.on_message(filters.command('repo'))
-async def git(Kashmira, message):
+async def git(bot, message):
     pablo = await message.reply_text("`Processing...`")
     args = message.text.split(None, 1)[1]
     if len(message.command) == 1:
@@ -35,7 +35,7 @@ async def git(Kashmira, message):
 
 <b>Open Issues :</b> <i>{qw.get("open_issues")}</i>
 
-<b>Powed by :</b> @creatorrio
+<b>Powered by :</b> @VJ_Botz
 
 """
         if qw.get("description"):

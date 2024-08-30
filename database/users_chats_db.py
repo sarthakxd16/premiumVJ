@@ -2,7 +2,6 @@
 # Subscribe YouTube Channel For Amazing Bot @Tech_VJ
 # Ask Doubt on telegram @KingVJ01
 
-# https://github.com/odysseusmax/animated-lamp/blob/master/bot/database/database.py
 import re
 from pymongo.errors import DuplicateKeyError
 import motor.motor_asyncio
@@ -40,6 +39,31 @@ async def delete_all_referal_users(user_id):
 
     
 class Database:
+
+    default_setgs = {
+        'button': SINGLE_BUTTON,
+        'botpm': P_TTI_SHOW_OFF,
+        'file_secure': PROTECT_CONTENT,
+        'imdb': IMDB,
+        'spell_check': SPELL_CHECK_REPLY,
+        'welcome': MELCOW_NEW_USERS,
+        'auto_delete': AUTO_DELETE,
+        'auto_ffilter': AUTO_FFILTER,
+        'max_btn': MAX_BTN,
+        'template': IMDB_TEMPLATE,
+        'caption': CUSTOM_FILE_CAPTION,
+        'shortlink': SHORTLINK_URL,
+        'shortlink_api': SHORTLINK_API,
+        'is_shortlink': IS_SHORTLINK,
+        'fsub': None,
+        'tutorial': TUTORIAL,
+        'is_tutorial': IS_TUTORIAL,
+        'vj': None,
+        'techvj': None,
+        'tech_vj': None,
+        'vjtech': None,
+        'vj_tech': None
+    }
     
     def __init__(self, uri, database_name):
         self._client = motor.motor_asyncio.AsyncIOMotorClient(uri)
@@ -47,12 +71,17 @@ class Database:
         self.col = self.db.users
         self.grp = self.db.groups
         self.users = self.db.uersz
+        self.bot = self.db.clone_bots
 
 
     def new_user(self, id, name):
         return dict(
             id = id,
             name = name,
+            file_id=None,
+            caption=None,
+            message_command=None,
+            save=False,
             ban_status=dict(
                 is_banned=False,
                 ban_reason="",
@@ -68,6 +97,7 @@ class Database:
                 is_disabled=False,
                 reason="",
             ),
+            settings=self.default_setgs
         )
     
     async def add_user(self, id, name):
@@ -81,7 +111,43 @@ class Database:
     async def total_users_count(self):
         count = await self.col.count_documents({})
         return count
+
+    async def add_clone_bot(self, bot_id, user_id, bot_token):
+        settings = {
+            'bot_id': bot_id,
+            'bot_token': bot_token,
+            'user_id': user_id,
+            'url': None,
+            'api': None,
+            'tutorial': None,
+            'update_channel_link': None
+        }
+        await self.bot.insert_one(settings)
+
+    async def is_clone_exist(self, user_id):
+        clone = await self.bot.find_one({'user_id': int(user_id)})
+        return bool(clone)
+
+    async def delete_clone(self, user_id):
+        await self.bot.delete_many({'user_id': int(user_id)})
+
+    async def get_clone(self, user_id):
+        clone_data = await self.bot.find_one({"user_id": user_id})
+        return clone_data
+            
+    async def update_clone(self, user_id, user_data):
+        await self.bot.update_one({"user_id": user_id}, {"$set": user_data}, upsert=True)
+
+    async def get_bot(self, bot_id):
+        bot_data = await self.bot.find_one({"bot_id": bot_id})
+        return bot_data
+            
+    async def update_bot(self, bot_id, bot_data):
+        await self.bot.update_one({"bot_id": bot_id}, {"$set": bot_data}, upsert=True)
     
+    async def get_all_bots(self):
+        return self.bot.find({})
+        
     async def remove_ban(self, id):
         ban_status = dict(
             is_banned=False,
@@ -145,28 +211,10 @@ class Database:
         
     
     async def get_settings(self, id):
-        default = {
-            'button': SINGLE_BUTTON,
-            'botpm': P_TTI_SHOW_OFF,
-            'file_secure': PROTECT_CONTENT,
-            'imdb': IMDB,
-            'spell_check': SPELL_CHECK_REPLY,
-            'welcome': MELCOW_NEW_USERS,
-            'auto_delete': AUTO_DELETE,
-            'auto_ffilter': AUTO_FFILTER,
-            'max_btn': MAX_BTN,
-            'template': IMDB_TEMPLATE,
-            'caption': CUSTOM_FILE_CAPTION,
-            'shortlink': SHORTLINK_URL,
-            'shortlink_api': SHORTLINK_API,
-            'is_shortlink': IS_SHORTLINK,
-            'tutorial': TUTORIAL,
-            'is_tutorial': IS_TUTORIAL
-        }
         chat = await self.grp.find_one({'id':int(id)})
         if chat:
-            return chat.get('settings', default)
-        return default
+            return chat.get('settings', self.default_setgs)
+        return self.default_setgs
     
 
     async def disable_chat(self, chat, reason="No Reason"):
@@ -237,5 +285,33 @@ class Database:
         })
         return count
 
+    async def set_thumbnail(self, id, file_id):
+        await self.col.update_one({'id': int(id)}, {'$set': {'file_id': file_id}})
+
+    async def get_thumbnail(self, id):
+        user = await self.col.find_one({'id': int(id)})
+        return user.get('file_id', None)
+
+    async def set_caption(self, id, caption):
+        await self.col.update_one({'id': int(id)}, {'$set': {'caption': caption}})
+
+    async def get_caption(self, id):
+        user = await self.col.find_one({'id': int(id)})
+        return user.get('caption', None)
+
+    async def set_msg_command(self, id, com):
+        await self.col.update_one({'id': int(id)}, {'$set': {'message_command': com}})
+
+    async def get_msg_command(self, id):
+        user = await self.col.find_one({'id': int(id)})
+        return user.get('message_command', None)
+
+    async def set_save(self, id, save):
+        await self.col.update_one({'id': int(id)}, {'$set': {'save': save}})
+
+    async def get_save(self, id):
+        user = await self.col.find_one({'id': int(id)})
+        return user.get('save', False) 
+    
 
 db = Database(DATABASE_URI, DATABASE_NAME)
